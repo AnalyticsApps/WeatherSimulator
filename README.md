@@ -172,7 +172,23 @@ Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulat
     ![](image/4_Uninstall.png)
 
 ## Troubleshooting
-Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulator/raw/master/RPM/WeatherSimulator-1.0-1.noarch.rpm) 
+
+1) How do I debug the issues?
+   Enable the DEBUG in /opt/WeatherSimulator/conf/log4j.properties. The logs will be in /opt/WeatherSimulator/log
+
+2) How do I add new locations to the tool?
+   Add the new location to /opt/WeatherSimulator/conf/LatLongCity.list.json. 
+   The sample format 
+   
+     {
+     "id": 123678,
+     "name": "Trichur",
+     "country": "IN",
+     "coord": {
+      "lon": 134.283333,
+      "lat": 24.549999
+     }
+   }
 
 ## Credits
 
