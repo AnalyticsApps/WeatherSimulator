@@ -26,7 +26,8 @@ High level flow:-
 8) Last year weather data is used to predict the Summary Feature. Values of Summary Feature can be Sunny, Snow, Rain, Cloudy, Partly Cloudy, Clear etc.
  
    Prediction of Summary Feature = Euclidean distance between predicted Weather data and last year weather data and get the summary that have minimum distance 
-
+ 
+ 
 
 Sample Output
 
