@@ -21,11 +21,11 @@ High level flow:-
 
 7) Last N days weather data is used to predict the features - Temperature, Cloud Cover, Dew Point, Humidity, Pressure, Wind Speed.
  
-Predicted value of a feature = Mean of a feature for last N days + Random number within ( 0 to Standard Deviation of that feature)
+   Predicted value of a feature = Mean of a feature for last N days + Random number within ( 0 to Standard Deviation of that feature)
 
 8) Last year weather data is used to predict the Summary Feature. Values of Summary Feature can be Sunny, Snow, Rain, Cloudy, Partly Cloudy, Clear etc.
  
-Prediction of Summary Feature = Euclidean distance between predicted Weather data and last year weather data and get the summary that have minimum distance    
+   Prediction of Summary Feature = Euclidean distance between predicted Weather data and last year weather data and get the summary that have minimum distance    
 
 
 ## Technology Stack
