@@ -13,12 +13,8 @@ The tool predicts the weather data for a given location. Internally, tool retrie
  
 ## Usage Instructions
 1. Update the Weather API Key
-   
-The tool uses the Dark Sky API to get the recent weather and historical weather details.
-    
-    
-Register the user in https://darksky.net/dev/register login to Dark Sky API - https://darksky.net/dev/account to get the secret key.
-  
+The tool uses the Dark Sky API to get the recent weather and historical weather details.  
+Register the user in https://darksky.net/dev/register login to Dark Sky API - https://darksky.net/dev/account to get the secret key. 
 Open the WeatherSimulator.properties and update the property weatherAPI.connector.key
   
    
@@ -29,7 +25,6 @@ Open the WeatherSimulator.properties and update the property weatherAPI.connecto
 	Build will compile, test and generate the RPM and final RPM is copied to [RPM Directory](RPM/)
 	
 3. Install RPM
- 
 Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulator/raw/master/RPM/WeatherSimulator-1.0-1.noarch.rpm)
  
     ```
@@ -40,17 +35,16 @@ Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulat
 	[root@hdp3test3 ~]#
      
     ```
-  	
     ![](image/1_Install.png)
-  
+
 4. Running the script
   
 After installing RPM, Application will be available under /opt/WeatherSimulator
   
-	* The scripts will be available under /opt/WeatherSimulator/bin/
-	* Configuration files are under /opt/WeatherSimulator/conf/
-	* The application logs will be in /opt/WeatherSimulator/log/
-	* The forecast output will be written to files under /opt/WeatherSimulator/output/
+    * The scripts will be available under /opt/WeatherSimulator/bin/
+    * Configuration files are under /opt/WeatherSimulator/conf/
+    * The application logs will be in /opt/WeatherSimulator/log/
+    * The forecast output will be written to files under /opt/WeatherSimulator/output/
   
   
     ```
