@@ -195,7 +195,7 @@ Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulat
 
 3) How do I improve the accuracy of the prediction.
 
-   Increase the value of property weatherAPI.lastNDaysWeather in WeatherSimulator.properties. By default, tool takes the last 5 days and last year 10 days to predict the features. Increasing the property will help in providing more accurate predictions.
+   Increase the value of property weatherAPI.lastNDaysWeather in WeatherSimulator.properties. By default, tool takes the last 5 days and last year 10 days to predict the features. Increasing the value will help in providing more accurate predictions.
 
    
 ## Credits
