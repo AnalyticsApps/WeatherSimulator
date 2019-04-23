@@ -133,11 +133,11 @@ The tool predicts the weather data for a given location. Internally, tool retrie
 
 ## Credits
 
-    This application uses API's provided by below third parties. 
-    
-    1) Dark Sky API (https://darksky.net/dev) to get the recent weather and historical weather details.
-    2) Elevation API (https://elevation-api.io/) to get the elevation for a latitude/longitude coordinates.
-    3) OpenWeatherMap (https://openweathermap.org/api) to get the latitiude/longitude for a location.
+This application uses API's provided by below third parties. 
+ 
+1) Dark Sky API (https://darksky.net/dev) to get the recent weather and historical weather details.
+2) Elevation API (https://elevation-api.io/) to get the elevation for a latitude/longitude coordinates.
+3) OpenWeatherMap (https://openweathermap.org/api) to get the latitiude/longitude for a location.
 	
 ## Author
 
