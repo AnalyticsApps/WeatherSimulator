@@ -45,12 +45,13 @@ The tool predicts the weather data for a given location. Internally, tool retrie
 
 4. Running the script
  
-    After installing RPM, Application will be available under /opt/WeatherSimulator &nbsp;&nbsp;
+    After installing RPM, Application will be available under /opt/WeatherSimulator
     * The scripts will be available under /opt/WeatherSimulator/bin/
     * Configuration files are under /opt/WeatherSimulator/conf/
     * The application logs will be in /opt/WeatherSimulator/log/
     * The forecast output will be written to files under /opt/WeatherSimulator/output/
 
+	
     ```
         [root@hdp3test3 ~]# cd /opt/WeatherSimulator/
 
@@ -58,6 +59,7 @@ The tool predicts the weather data for a given location. Internally, tool retrie
         bin  conf  lib  log  output  Readme.txt
         [root@hdp3test3 WeatherSimulator]#
     ```
+    ![](image/2_FolderStructure.png)
 
     Update the Weather API Key (property weatherAPI.connector.key) in /opt/WeatherSimulator/conf/WeatherSimulator.properties
 
@@ -116,3 +118,7 @@ The tool predicts the weather data for a given location. Internally, tool retrie
         [root@hdp3test3 bin]#
             
     ```
+    ![](image/3_Execution.png)
+
+    ![](image/3_Execution1.png)
+
