@@ -12,13 +12,17 @@ The tool predicts the weather data for a given location. Internally, tool retrie
 * RPM
  
 ## Usage Instructions
-1. Update the Weather API Key &nbsp;
-The tool uses the Dark Sky API to get the recent weather and historical weather details. &nbsp;
-Register the user in https://darksky.net/dev/register login to Dark Sky API - https://darksky.net/dev/account to get the secret key. &nbsp;
+1. Update the Weather API Key 
+
+The tool uses the Dark Sky API to get the recent weather and historical weather details. 
+ 
+Register the user in https://darksky.net/dev/register login to Dark Sky API - https://darksky.net/dev/account to get the secret key. 
+ 
 Open the WeatherSimulator.properties and update the property weatherAPI.connector.key
   
    
 2. Build using maven
+ Update the Weather API KEy in src/test/resources/WeatherSimulator.properties
  
     ```mvn clean compile package -DWeatherSimulator.properties=src/test/resources/WeatherSimulator.properties```
 
@@ -38,7 +42,7 @@ Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulat
     ![](image/1_Install.png)
 
 4. Running the script
-  
+ 
 After installing RPM, Application will be available under /opt/WeatherSimulator &nbsp;&nbsp;
 * The scripts will be available under /opt/WeatherSimulator/bin/
 * Configuration files are under /opt/WeatherSimulator/conf/
