@@ -122,3 +122,26 @@ The tool predicts the weather data for a given location. Internally, tool retrie
 
     ![](image/3_Execution1.png)
 
+5. Uninstalling RPM
+
+    ```
+        [root@hdp3test3 bin]# rpm -e WeatherSimulator-1.0-1.noarch
+        Uninstalling the Weather Simulator Setup completed
+        [root@hdp3test3 bin]#
+    ```
+    ![](image/4_Uninstall.png)
+
+## Credits
+
+    This application uses API's provided by below third parties. 
+    
+    1) Dark Sky API (https://darksky.net/dev) to get the recent weather and historical weather details.
+    2) Elevation API (https://elevation-api.io/) to get the elevation for a latitude/longitude coordinates.
+    3) OpenWeatherMap (https://openweathermap.org/api) to get the latitiude/longitude for a location.
+	
+## Author
+
+**Nisanth Simon** - [NisanthSimon@LinkedIn]
+
+[NisanthSimon@LinkedIn]: https://au.linkedin.com/in/nisanth-simon-03b2149
+ 
