@@ -6,16 +6,27 @@
 The tool predicts the weather data like Temperature, Cloud Cover, Dew Point, Humidity, Pressure, Wind Speed, Summary for a given location. 
 
 High level flow:-
+
 1) Get the location details from User.
+
 2) Based on location, get the Lat/Long coordinates using the configuration file LatLongCity.list.json.
+
 3) Get the elevation of a location using Elevation API (https://elevation-api.io/) 
-3) Get the current weather data using Dark Sky API (https://darksky.net/dev) for that location.
-4) Get the weather data for last N days for that location using Dark Sky API. 
-5) Get the last year weather data (Historical data) for that location. This includes ( LAST_YEAR_N_PREVIOUS_DAYS + LAST_YEAR_CURRENT_DATE + LAST_YEAR_N_SUBSEQUENT_DAYS ) weather data.
-6) Last N days weather data is used to predict the features - Temperature, Cloud Cover, Dew Point, Humidity, Pressure, Wind Speed. 
+
+4) Get the current weather data using Dark Sky API (https://darksky.net/dev) for that location.
+
+5) Get the weather data for last N days for that location using Dark Sky API. 
+
+6) Get the last year weather data (Historical data) for that location using Dark Sky API. This includes ( LAST_YEAR_N_PREVIOUS_DAYS + LAST_YEAR_CURRENT_DATE + LAST_YEAR_N_SUBSEQUENT_DAYS ) weather data.
+
+7) Last N days weather data is used to predict the features - Temperature, Cloud Cover, Dew Point, Humidity, Pressure, Wind Speed.
+ 
 Predicted value of a feature = Mean of a feature for last N days + Random number within ( 0 to Standard Deviation of that feature)
-7) Last year weather data is used to predict the Summary Feature. Values of Summary Feature can be Sunny, Snow, Rain, Cloudy, Partly Cloudy, Clear etc. 
+
+8) Last year weather data is used to predict the Summary Feature. Values of Summary Feature can be Sunny, Snow, Rain, Cloudy, Partly Cloudy, Clear etc.
+ 
 Prediction of Summary Feature = Euclidean distance between predicted Weather data and last year weather data and get the summary that have minimum distance    
+
 
 ## Technology Stack
 * Java 8
