@@ -47,7 +47,7 @@ The tool predicts the weather data for a given location. Internally, tool retrie
  
     After installing RPM, Application will be available under /opt/WeatherSimulator
     * The scripts will be available under /opt/WeatherSimulator/bin/
-    * Configuration files are under /opt/WeatherSimulator/conf/
+    * Configuration files & log4j.properties are under /opt/WeatherSimulator/conf/
     * The application logs will be in /opt/WeatherSimulator/log/
     * The forecast output will be written to files under /opt/WeatherSimulator/output/
 
