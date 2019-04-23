@@ -12,7 +12,8 @@ The tool predicts the weather data for a given location. Internally, tool retrie
 * RPM
 
 ## Usage Instructions
-1. Build using maven 
+1. Build using maven
+<br> 
     ```mvn clean compile package -DWeatherSimulator.properties=src/test/resources/WeatherSimulator.properties```
 
 	Build will compile, test and generate the RPM and final RPM is copied to [RPM Directory](RPM/)
@@ -21,7 +22,7 @@ The tool predicts the weather data for a given location. Internally, tool retrie
 Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulator/raw/master/RPM/WeatherSimulator-1.0-1.noarch.rpm)
     ```
     [root@hdp3test3 ~]# rpm -ivh WeatherSimulator-1.0-1.noarch.rpm
-	Preparing...                          ################################# [100%]
+	Preparing...                       ################################# [100%]
 	Updating / installing...
 	1:WeatherSimulator-1.0-1           ################################# [100%]
 	[root@hdp3test3 ~]#
@@ -30,4 +31,23 @@ Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulat
     ```
     ![](image/1_Install.png)
 
+<br>    
+3. Running the script 
+
 <br> 
+
+After installing RPM, Application will be available under /opt/WeatherSimulator
+ 
+	1) The scripts will be available under /opt/WeatherSimulator/bin/
+	2) Configuration files are under /opt/WeatherSimulator/conf/
+	3) The application logs will be in /opt/WeatherSimulator/log/
+	4) The forecast output will be written to files under /opt/WeatherSimulator/output/
+
+
+        [root@hdp3test3 ~]# cd /opt/WeatherSimulator/
+
+        [root@hdp3test3 WeatherSimulator]# ls
+        bin  conf  lib  log  output  Readme.txt
+        [root@hdp3test3 WeatherSimulator]#
+
+    
