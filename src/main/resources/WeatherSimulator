@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+get_java_cmd() {
+  if [[ -n "$JAVA_HOME" ]] && [[ -x "$JAVA_HOME/bin/java" ]];  then
+    echo "$JAVA_HOME/bin/java"
+  else
+    echo "java"
+  fi
+}
+
+
+# Check the java version. Minimum java version should be 1.8
+java_version_check() {
+  readonly java_version=$("$java_cmd" -version 2>&1 | awk -F '"' '/version/ {print $2}')
+  if [[ "$java_version" == "" ]]; then
+    echo
+    echo No java installations was detected.
+    echo Please go to http://www.java.com/getjava/ and download
+    echo
+    exit 1
+  else
+    local major=$(echo "$java_version" | cut -d'.' -f1)
+    if [[ "$major" -eq "1" ]]; then
+     local major=$(echo "$java_version" | cut -d'.' -f2)
+    fi
+    if [[ "$major" -lt "8" ]]; then
+      echo
+      echo The java installation you have is not up to date
+      echo $app_name requires at least version 1.8+, you have
+      echo version $java_version
+      echo
+      echo Please go to http://www.java.com/getjava/ and download
+      echo a valid Java Runtime and install before running $app_name.
+      echo
+      exit 1
+    fi
+  fi
+}
+
+run() {
+  java_version_check
+  $java_cmd -cp $classpath -Dlog4j.configuration=file:/opt/WeatherSimulator/conf/log4j.properties -DWeatherSimulator.properties=/opt/WeatherSimulator/conf/WeatherSimulator.properties $mainclass
+}
+
+
+declare java_cmd=$(get_java_cmd)
+declare -r classpath="/opt/WeatherSimulator/lib/WeatherSimulator-1.0.jar:/opt/WeatherSimulator/lib/commons-logging-1.2.jar:/opt/WeatherSimulator/lib/commons-lang3-3.9.jar:/opt/WeatherSimulator/lib/jackson-annotations-2.9.8.jar:/opt/WeatherSimulator/lib/jackson-core-2.9.8.jar:/opt/WeatherSimulator/lib/log4j-1.2.17.jar:/opt/WeatherSimulator/lib/jackson-databind-2.9.8.jar"
+declare -r mainclass=(com.weather.simulator.WeatherSimulator)
+
+run
+

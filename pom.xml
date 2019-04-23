@@ -1,0 +1,235 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>WeatherSimulator</groupId>
+	<artifactId>WeatherSimulator</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+	<name>WeatherSimulator</name>
+	<description>WeatherSimulator is used to simulate the weather data for a region.</description>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.3.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.1.1</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/dependentJars</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<version>2.0.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>rpm</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<copyright>2019, Nisanth Simon</copyright>
+					<group>Development</group>
+					<description>RPM Package to setup the Weather Simulator</description>
+					<mappings>
+						<mapping>
+							<directory>${app.home}</directory>
+							<filemode>777</filemode>
+						</mapping>
+						<mapping>
+							<directory>${app.home}/lib</directory>
+							<filemode>777</filemode>
+							<sources>
+								<source>
+									<location>target/WeatherSimulator-1.0.jar</location>
+								</source>
+								<source>
+									<location>target/dependentJars/commons-logging-1.2.jar</location>
+								</source>
+								<source>
+									<location>target/dependentJars/commons-lang3-3.9.jar</location>
+								</source>
+								<source>
+									<location>target/dependentJars/jackson-annotations-2.9.8.jar</location>
+								</source>
+								<source>
+									<location>target/dependentJars/jackson-core-2.9.8.jar</location>
+								</source>
+								<source>
+									<location>target/dependentJars/jackson-databind-2.9.8.jar</location>
+								</source>
+								<source>
+									<location>target/dependentJars/log4j-1.2.17.jar</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>${app.home}/bin</directory>
+							<filemode>777</filemode>
+							<sources>
+								<source>
+									<location>src/main/resources/WeatherSimulator</location>
+								</source>
+
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>${app.home}/conf</directory>
+							<filemode>777</filemode>
+							<sources>
+								<source>
+									<location>src/main/resources/log4j.properties</location>
+								</source>
+								<source>
+									<location>src/main/resources/LatLongCity.list.json</location>
+								</source>
+								<source>
+									<location>src/main/resources/WeatherSimulator.properties</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>${app.home}</directory>
+							<filemode>777</filemode>
+							<sources>
+								<source>
+									<location>src/main/resources/Readme.txt</location>
+								</source>
+
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>${app.home}/log</directory>
+							<filemode>777</filemode>
+						</mapping>
+						<mapping>
+							<directory>${app.home}/output</directory>
+							<filemode>777</filemode>
+						</mapping>
+					</mappings>
+					<prepareScriptlet>
+						<script>echo "Installing the Weather Simulator " </script>
+					</prepareScriptlet>
+					<preInstallScriptlet>
+						<script>echo "Weather Simulator 1.0, Copyright (C) 2019, Nisanth Simon"</script>
+					</preInstallScriptlet>
+					<preremoveScriptlet>
+						<script>rm -rf /opt/WeatherSimulator/log/* /opt/WeatherSimulator/output/* &amp;&amp; echo "Uninstalling the Weather Simulator Setup completed" </script>
+					</preremoveScriptlet>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M3</version>
+				<configuration>
+					<systemPropertyVariables>
+						<propertyName>WeatherSimulator.properties</propertyName>
+						<buildDirectory>${basedir}/src/test/resources/WeatherSimulator.properties</buildDirectory>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>Copy Generated RPM from target/rpm/WeatherSimulator/RPMS/noarch/WeatherSimulator-1.0-1.noarch.rpm to RPM/WeatherSimulator-1.0-1.noarch.rpm Directory</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/RPM</outputDirectory>
+							<resources>
+								<resource>
+									<directory>target/rpm/WeatherSimulator/RPMS/noarch</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+							<nonFilteredFileExtensions>
+								<nonFilteredFileExtension>rpm</nonFilteredFileExtension>
+							</nonFilteredFileExtensions>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<app.home>/opt/WeatherSimulator</app.home>
+	</properties>
+
+</project>
