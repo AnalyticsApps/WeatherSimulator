@@ -174,10 +174,13 @@ Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulat
 ## Troubleshooting
 
 1) How do I debug the issues?
+
    Enable the DEBUG in /opt/WeatherSimulator/conf/log4j.properties. The logs will be in /opt/WeatherSimulator/log
 
 2) How do I add new locations to the tool?
-   Add the new location to /opt/WeatherSimulator/conf/LatLongCity.list.json. 
+
+   Add the new location to /opt/WeatherSimulator/conf/LatLongCity.list.json.
+   
    The sample format 
    
      {
@@ -190,6 +193,11 @@ Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulat
      }
    }
 
+3) How do I improve the accuracy of the prediction.
+
+   Increase the value of property weatherAPI.lastNDaysWeather in WeatherSimulator.properties. By default, tool takes the last 5 days and last year 10 days to predict the features. Increasing the property will help in providing more accurate predictions.
+
+   
 ## Credits
 
 This application uses API's provided by below third parties. 
