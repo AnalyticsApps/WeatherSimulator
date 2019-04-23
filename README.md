@@ -48,6 +48,9 @@ Sample Output
 * JUnit
 * RPM
  
+## RPM Download
+Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulator/raw/master/RPM/WeatherSimulator-1.0-1.noarch.rpm) 
+
 ## Usage Instructions
 1. Update the Weather API Key 
 
@@ -167,6 +170,9 @@ Sample Output
         [root@hdp3test3 bin]#
     ```
     ![](image/4_Uninstall.png)
+
+## Troubleshooting
+Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulator/raw/master/RPM/WeatherSimulator-1.0-1.noarch.rpm) 
 
 ## Credits
 
