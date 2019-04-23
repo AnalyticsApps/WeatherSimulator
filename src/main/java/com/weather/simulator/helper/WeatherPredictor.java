@@ -41,7 +41,7 @@ public class WeatherPredictor {
 
 		ZoneId id = ZoneId.of(lastNWeatherDataBean[0].getTimezone());
 		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
-		LocalDateTime currentDate = LocalDateTime.now();
+		LocalDateTime currentDate = LocalDateTime.now().plusDays(1);
 		ZonedDateTime zonedDateTime = ZonedDateTime.of(currentDate, id);
 		// Set the Date based on timezone
 		forecastBean.setDate(zonedDateTime.format(dateFormat));
