@@ -25,7 +25,20 @@ High level flow:-
 
 8) Last year weather data is used to predict the Summary Feature. Values of Summary Feature can be Sunny, Snow, Rain, Cloudy, Partly Cloudy, Clear etc.
  
-   Prediction of Summary Feature = Euclidean distance between predicted Weather data and last year weather data and get the summary that have minimum distance    
+   Prediction of Summary Feature = Euclidean distance between predicted Weather data and last year weather data and get the summary that have minimum distance 
+
+
+Sample Output
+
+    ```
+        Location     Position                   Local Time           Conditions     Temperature Cloud Cover  Dew Point   Humidity   Pressure   Wind Speed
+        ---------------------------------------------------------------------------------------------------------------------------------------------------
+        westmead     -33.803829,150.987686,34   2019-04-22 11:49:01  Partly Cloudy  68.68       0.50         64.18       0.91       1025.70    6.01
+        rooty hill   -33.76667,150.833328,50    2019-04-22 11:49:06  Mostly Cloudy  64.99       0.55         61.25       0.91       1026.07    4.33
+        sydney       -33.867851,151.207321,8    2019-04-22 11:49:10  Partly Cloudy  69.65       0.46         65.58       0.92       1025.73    8.31
+        seven hills  30.654079,-88.303062,50    2019-04-22 11:49:14  Clear          61.96       0.46         62.62       0.90       1016.13    6.84
+		
+    ```   
 
 
 ## Technology Stack
@@ -39,7 +52,7 @@ High level flow:-
 
    The tool uses the Dark Sky API to get the recent weather and historical weather details. 
  
-   Register the user in https://darksky.net/dev/register login to Dark Sky API - https://darksky.net/dev/account to get the secret key. 
+   Register the user in https://darksky.net/dev/register Login to Dark Sky API - https://darksky.net/dev/account to get the secret key. 
  
    Open the WeatherSimulator.properties and update the property weatherAPI.connector.key
   
