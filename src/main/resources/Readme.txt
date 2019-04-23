@@ -26,7 +26,7 @@ Updating / installing...
 
 After installing the RPM, 
 	1) The scripts will be available under /opt/WeatherSimulator/bin/
-	2) Configuration files are under /opt/WeatherSimulator/conf/
+	2) Configuration files & log4j.properties are under /opt/WeatherSimulator/conf/
 	3) The application logs will be in /opt/WeatherSimulator/log/
 	4) The forecast output will be written to files under /opt/WeatherSimulator/output/
 
@@ -106,7 +106,7 @@ sydney|-33.867851,151.207321,8|2019-04-22|11:49:10|Partly|Cloudy|69.65|0.46|65.5
 seven|hills|30.654079,-88.303062,50|2019-04-22|11:49:14|Clear|61.96|0.46|62.62|0.90|1016.13|6.84|
 [root@hdp3test3 bin]#
 
-Uninstall the RPM
+Uninstalling RPM
 =================
 
 [root@hdp3test3 bin]# rpm -e WeatherSimulator-1.0-1.noarch
