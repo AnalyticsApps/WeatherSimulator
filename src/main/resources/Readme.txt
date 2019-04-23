@@ -9,7 +9,7 @@
 Author : Nisanth Simon
 
 
-Download the RPM from <ProvideGithubURL>
+Download the RPM from https://github.com/AnalyticsApps/WeatherSimulator/raw/master/RPM/WeatherSimulator-1.0-1.noarch.rpm
 
 
 
