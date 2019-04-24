@@ -146,7 +146,7 @@ Click here to download the [RPM](https://github.com/AnalyticsApps/WeatherSimulat
         
          Weather output written to /opt/WeatherSimulator/output/weatherResults2019_04_22_23_49_14.txt
         
-         File conversion completed.
+         Weather Prediction completed.
         
         [root@hdp3test3 bin]#
         

@@ -64,7 +64,7 @@ public class WeatherSimulator {
 		
 		System.out.println(String.format("\n\n\n\n Weather output written to %s \n\n", fileName));
 		
-		System.out.println("\n\n File conversion completed. \n\n");
+		System.out.println("\n\n Weather Prediction completed. \n\n");
 
 	}
 
